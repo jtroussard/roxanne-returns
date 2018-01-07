@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ <h1>Join the GTO Club</h1>
+  <h2>List of current members</h2>
+   <form method="POST" action="/form2">
+    <table>
+     <tr><td colspan='2'><center>Your Contact Details</center></td></tr>
+     <tr><td>First Name</td><td><input type='text' name='first' /></td></tr>
+     <tr><td>Last Name</td><td><input type='text' name='last' /></td></tr>
+     <tr><td>Email</td><td><input type='text' name='email' /></td></tr>
+     <tr><td>Zip Code</td><td><input type='text' name='zip' /></td></tr>
+     <tr><td colspan='2'><center>Create a password</center></td></tr>
+     <tr><td>Password</td><td><input type='password' name='pass' /></td></tr>
+     <tr><td colspan='2'><center>Tell us about your Car</center></td></tr>
+     <tr><td>Model</td><td>
+		     <input type="radio" name='model' value="GTO (hardtop)"> GTO (Hardtop)<br>
+		     <input type="radio" name='model' value="GTO (convertible)"> GTO (Convertible)<br>
+		     <input type="radio" name='model' value="LeMans (hardtop)"> LeMans (Hardtop)<br>
+		     <input type="radio" name='model' value="LeMans (convertible)"> LeMans (Convertible)<br>
+     </td></tr>
+     <tr><td>Year</td><td><select name='year'>
+       <option disabled selected value> -- select an option -- </option>
+       <option>1964</option>
+       <option>1965</option>
+       <option>1966</option>
+       <option>1967</option>
+       <option>1968</option>
+       <option>1969</option>
+       <option>1970</option>
+       <option>1971</option>
+       <option>1972</option>
+       <option>1973</option>
+       <option>2004</option>
+       <option>2005</option>
+       <option>2006</option>
+     </select></td></tr>
+     </table>
+     
+     <input type="submit" value="Join!" style="width:50px; height:25px;"/>
+     <input type="reset" value="Reset Form" style="width:150px; height:25px;"/>
+
+    
+   </form>
+   
+   
+   
+        <p></p>
+        <p></p><p>Happy Motoring!</p>
+        <p>-Jacques</p>
+{% endblock %}
+

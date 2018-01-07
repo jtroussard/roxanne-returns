@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ <h1>Thank You, {{name}} for Registering</h1>
+   <h2>You will start receiving the newsletter</h2>
+        <p></p>
+        <table>
+         <tr><td colspan="2"><font color=42bcf4>Here is a list of other members in the group.</font></td></tr>
+         {% for member in members_list %}
+          <tr><td><b><a href="mailto:{{member[3]}}"><font color=BD430B>{{member[1]}}<b> {{member[2]}}</b></font></a></td><td>{{member[5]}} {{member[6]}}</td></tr>
+         {% endfor %}
+        </table>
+        <p></p><p>Happy Motoring!</p>
+        <p>-Jacques</p>
+{% endblock %}
+

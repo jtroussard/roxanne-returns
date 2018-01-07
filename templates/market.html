@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Online Market &amp; Swap Meet<font color="orange"></h1>
+    <h2>Search for cars here!</h2>
+    <form method="POST" action="/market">
+        <p>
+            Search:
+            <input type="text" name="search" value="" maxlength="140" size="80" /><br />
+        </p>
+        <p>
+            <center>
+            <input type="submit" value="     Search     " />
+            <p>
+                Location Search:<br />
+                <input type="radio" name="location_switch" value="ON" checked>ON<br />
+                <input type="radio" name="location_switch" value="OFF">OFF<br />
+            </p>
+            </center>
+        </p>
+    </form>
+    <p></p>
+    <!-- config is a list holder normal table values for such attbrs:
+    borders
+    heading values
+    -->
+    <table border=0 width="680" bgcolor="#222">
+        <tr>
+            
+            <!--Search result headers are being contained in variables as to remain invisable before search inquiry has been made.-->
+            <th width="70%">{{config['header_01']}}</th> <!--search result string-->
+            <th width="15%">{{config['header_02']}}</th> <!--corresponding price-->
+            <th width="15%">{{config['header_03']}}</th> <!--corresponding price-->
+            <!--time permitting make a picture and contact heading-->
+        </tr>
+
+        {% for post in results %}
+            <tr>
+                <td>{{post[3]}} {{post[1]}} {{post[2]}}</td>
+                
+                <td>
+                    {% if not post[5] %}
+                    <b>NOT FOR SALE</b>
+                    {% else %}
+                    {{post [5]}}
+                    {% endif %}
+                </td>
+                <td>
+                    {{post[4]}}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ <h1>Where all the Gear Heads Meet!</h1>
+   <h2>* Upcoming Events for the month of {{showMonth}}&nbsp*</h2>
+     <h3><b>{{show.name}}</b> 
+       <p>{{show.date}} at {{show.location}}.</p></h3>
+         <div style="margin-left: 1em;">
+           <p>{{show.description}}</p>
+           <p>{{show.address}}</p>
+           {% if isPres %}
+           <p><font color='orange'><b>Roxanne will be there!</b></font></p>
+           {% else %}
+           <p><font color='orange'><b>Roxanne will <font color='red'><b>NOT</b></font> be there!</b></font></p>
+           {% endif %}
+         </div>
+
+        <p></p><p>Happy Motoring!</p>
+        <p>-Jacques</p>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ <h1>The Great One in Action!</h1>
+   
+     <p></p>
+     {% for post in vids %}
+     <h3>{{post.title}}</h3>
+     <iframe width="620" height="480" src="https://www.youtube.com/embed/{{post.link}}"frameborder="0" allowfullscreen></iframe>
+     <p><p></p></p>
+     {% endfor %}
+        
+        <p></p><p>Happy Motoring!</p>
+        <p>-Jacques</p>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome<font color="orange">{{user[0]}} {{user[1]}}</font></h1>
+    <h2>This is your RoxanneReturns Dashboard</h2>
+    <form method="POST" action="/dashboard">
+    <h3>What would you like to do?</h3>
+    <p>
+        <select name="dash_option" autofocus />
+        <option disabled selected value> -- select an option --</option>
+        <optgroup label="Market"></optgroup>
+            <option value="search">Search</option>
+            <option value="post">Post</option>
+        </select>
+    </p>
+    <p>
+        <input type="submit" value="         Go         "/>
+    </p>
+    </form>
+    {% endblock %}
